@@ -1,0 +1,11 @@
+<h1>Index post page</h1>
+<div>
+  <%= link_to "New post", new_post_path %>
+</div>
+<div>
+  <p>
+  <% @posts.each do |post| %>
+    <li><%= link_to "#{post.post_text}", post_path(post.id) %></li>
+  <% end %>
+  </p> 
+</div>
