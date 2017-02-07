@@ -1,7 +1,9 @@
 <h1>Index post page</h1>
 <div>
   <%= link_to "New post", new_post_path %>
+  <%= link_to "View Categories", categories_path %>
 </div>
+
 <div>
   <p>
   <% @posts.each do |post| %>

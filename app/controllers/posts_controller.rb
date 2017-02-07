@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    debugger
     @post = Post.new(post_params)
     if @post.save
       redirect_to posts_path
@@ -43,6 +44,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:post_text) 
+    params.require(:post).permit(:post_text, category_ids: []) 
   end
 end

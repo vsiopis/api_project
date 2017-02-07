@@ -1,0 +1,12 @@
+<%= form_for @post do |f| %>
+  <%= f.text_field :post_text %> 
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+    <% cb.label {cb.check_box + cb.text} %>
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<p> 
+<%= link_to "back to posts", posts_path %>
+</p>

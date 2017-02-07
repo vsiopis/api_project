@@ -1,2 +1,7 @@
 <h3><%= @category.name %></h3>
 <%= link_to "edit", edit_category_path(@category.id) %>
+<%= link_to "delete", category_path(@category.id), method: :delete %>
+
+<% @category.posts.each do |post| %>
+  <li><%= link_to "#{post.post_text}", post_path(post.id) %></li>
+<% end %>

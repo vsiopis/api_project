@@ -5,3 +5,12 @@
 <%= link_to "edit", edit_post_path(@post.id) %>
 | <%= link_to "delete", post_path(@post.id), method: :delete %>
 </p>
+
+<h3>Categories</h3>
+<% @post.categories.each do |category| %>
+  <li><%= category.name %></li>
+<% end %>
+
+<p> 
+<%= link_to "back to posts", posts_path %>
+</p>
