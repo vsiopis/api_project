@@ -8,7 +8,7 @@
 
 <h3>Categories</h3>
 <% @post.categories.each do |category| %>
-  <li><%= category.name %></li>
+  <li><%= link_to "#{category.name}", category_path(category.id) %></li>
 <% end %>
 
 <p> 

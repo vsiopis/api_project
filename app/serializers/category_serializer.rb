@@ -1,6 +1,6 @@
-class Category < ApplicationRecord
+class CategorySerializer < ActiveModel::Serializer
+  attributes :id, :name
+
   has_many :post_categories
   has_many :posts, through: :post_categories
-  validates :name, presence: true
 end
-

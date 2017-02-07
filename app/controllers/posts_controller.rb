@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.all
+    render json: @posts
   end
 
   def new
@@ -9,7 +10,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    debugger
     @post = Post.new(post_params)
     if @post.save
       redirect_to posts_path
@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    render json: @post
   end
 
   def edit

@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    render json: @categories
   end
 
   def new
@@ -21,6 +22,7 @@ class CategoriesController < ApplicationController
 
   def show
     @posts = @category.posts
+    render json: @category
   end
     
   def edit
