@@ -1,5 +1,7 @@
 <h1>Show Post Page</h1>
 
 <p>
-  <%= @post.post_text %>
+<%= @post.post_text %><br>
+<%= link_to "edit", edit_post_path(@post.id) %>
+| <%= link_to "delete", post_path(@post.id), method: :delete %>
 </p>
