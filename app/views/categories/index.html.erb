@@ -1,0 +1,10 @@
+<h1>Index Category Page</h1>
+<h3>Show Categories</h3>
+
+<p>
+<%= link_to "new category", new_category_path %>
+</p>
+
+<% @categories.each do |c| %>
+  <li><%= link_to "#{c.name}", category_path(c.id) %></li>
+<% end %>
