@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
-    @posts = Post.all
+    @posts = Post.order('created_at DESC')
     render json: @posts
   end
 
@@ -46,6 +46,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:post_text, category_ids: []) 
+    params.require(:post).permit(:post_text, :title, category_ids: []) 
   end
 end
