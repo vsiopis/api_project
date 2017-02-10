@@ -7,14 +7,15 @@
     <%= f.label :post_text, 'Text' %>
     <%= f.text_area :post_text %> 
   </p>
+  
   <p>
     <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
       <% cb.label {cb.check_box + cb.text} %>
     <% end %>
+  <br>
+  
   </p> 
-  <p>
-    <%= f.submit %>
-  </p>
+  <%= f.submit %>
 <% end %>
 
 <p> 
